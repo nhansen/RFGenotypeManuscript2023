@@ -1,0 +1,5 @@
+#!/bin/bash
+
+sed 's:.*/::' IGSR3202.fastqs.fof | sed 's/.alphathal.final.fastq//' | awk '{OFS="\t"; print NR, $1}' > IGSR3202.samplenames.txt
+join IGSR3202.samplenames.txt IGSR3202.fullmodel.genos.rf.genos | awk '{OFS="\t"; print $2, $3}' > IGSR3202.samples_with_genos.txt
+join IGSR3202.samplenames.txt IGSR3202.fullmodel.genos.rf.genos | awk '$4>=0.4 {OFS="\t"; print $2, $3}' > IGSR3202.samples_with_genos.hq.txt

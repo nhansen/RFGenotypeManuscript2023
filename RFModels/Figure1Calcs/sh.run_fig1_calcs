@@ -1,0 +1,19 @@
+#!/bin/bash
+
+source /etc/profile.d/modules.sh
+module use /opt/sw/modules
+
+module load Python/3.7.4-GCCcore-8.3.0
+
+# run multiple times to get accuracy statistics for paper figure
+export OUTDIR=$1
+
+export TRAINDATA=../../SimTrainData/SimFeatures/combined_features.sixgenos.train.txt
+export TESTDATA=../../SimTrainData/SimFeatures/combined_features.sixgenos.test.txt
+export PREFIX=`echo $OUTDIR | sed 's:.*/::'`
+
+mkdir -p $OUTDIR
+mkdir -p $OUTDIR/models
+mkdir -p $OUTDIR/predictions
+
+python3 ../../../MachineLearning/mlgenotype/github/mlgenotype/scripts/Figure1Calcs.py --outdir $OUTDIR --prefix $PREFIX --train $TRAINDATA --test $TESTDATA

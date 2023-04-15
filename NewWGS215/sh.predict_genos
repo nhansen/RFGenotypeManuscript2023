@@ -1,0 +1,8 @@
+#!/bin/bash
+
+source /etc/profile.d/modules.sh
+module use /opt/sw/modules
+
+module load Python/3.7.4-GCCcore-8.3.0
+
+python3 ../../MachineLearning/mlgenotype/github/mlgenotype/scripts/RFModelPredict.py -f NewWGS215.features.txt -m ../RFModels/PredictiveModel/combined_full_model.sixgenos.rf.model -o NewWGS215.rf.genos

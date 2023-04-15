@@ -1,0 +1,11 @@
+#!/bin/bash
+
+awk -F"\t" 'NR==1 {OFS="\t"; for (i=10; i<=NF; i++) print i-9, $i}' 1KGP_3202.gatksv_svtools_novelins.freeze_V3.wAF.alphadeletions.vcf > 1KGP_3202.gatksv_svtools_novelins.freeze_V3.wAF.sampleorder.txt
+
+awk -F"\t" '$2==173630 {OFS="\t"; for (i=10; i<=NF; i++) print i-9, $i}' 1KGP_3202.gatksv_svtools_novelins.freeze_V3.wAF.alphadeletions.vcf > 1KGP_3202.gatksv_svtools_novelins.freeze_V3.wAF.alpha37genos.txt
+
+awk -F"\t" '$2==170439 {OFS="\t"; for (i=10; i<=NF; i++) print i-9, $i}' 1KGP_3202.gatksv_svtools_novelins.freeze_V3.wAF.alphadeletions.vcf > 1KGP_3202.gatksv_svtools_novelins.freeze_V3.wAF.alpha42genos.txt
+
+join 1KGP_3202.gatksv_svtools_novelins.freeze_V3.wAF.sampleorder.txt 1KGP_3202.gatksv_svtools_novelins.freeze_V3.wAF.alpha37genos.txt | join - 1KGP_3202.gatksv_svtools_novelins.freeze_V3.wAF.alpha42genos.txt | awk '{OFS="\t"; print $2, $3, $4}' > 1KGP_3202.gatksv_svtools_novelins.freeze_V3.wAF.alphadeletion.genos.txt
+
+awk '$2~/^0\/0/ || $2~/^\.\/\./ {$2="WTYP_WTYP"} $2~/^0\/1/ {$2="WTYP_AL37"} $2~/^1\/1/ {$2="AL37_AL37"} $3~/^0\/0/ {$3="WTYP_WTYP"} $3~/^0\/1/ {$3="WTYP_AL42"} $3~/^1\/1/ {$3="AL42_AL42"} {print $1, $2, $3}' 1KGP_3202.gatksv_svtools_novelins.freeze_V3.wAF.alphadeletion.genos.txt | awk '$2!="WTYP_WTYP" {OFS="\t"; print $1, $2} $3!="WTYP_WTYP" {OFS="\t"; print $1, $3} $2=="WTYP_WTYP" && $3=="WTYP_WTYP" {OFS="\t"; print $1, $2}' > 1KGP_3202.gatksv_svtools_novelins.freeze_V3.wAF.alphadeletion.samples_with_genos.txt

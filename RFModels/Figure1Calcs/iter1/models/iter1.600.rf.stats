@@ -1,0 +1,5 @@
+RF model best hyperparameters:
+Best number of estimators: 100
+Best maximum depth: 4
+RF model mean CV score (all data, best hyperparameters):
+1.0

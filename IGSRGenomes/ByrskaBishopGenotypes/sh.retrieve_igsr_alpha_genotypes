@@ -1,0 +1,9 @@
+#!/bin/bash
+
+wget http://ftp.1000genomes.ebi.ac.uk/vol1/ftp/data_collections/1000G_2504_high_coverage/working/20210124.SV_Illumina_Integration/1KGP_3202.gatksv_svtools_novelins.freeze_V3.wAF.vcf.gz
+
+gunzip -c 1KGP_3202.gatksv_svtools_novelins.freeze_V3.wAF.vcf.gz | grep 'CHROM' > 1KGP_3202.gatksv_svtools_novelins.freeze_V3.wAF.alphadeletions.vcf
+gunzip -c 1KGP_3202.gatksv_svtools_novelins.freeze_V3.wAF.vcf.gz | awk -F"\t" '$1=="chr16" && $2==170439 {print}' >> 1KGP_3202.gatksv_svtools_novelins.freeze_V3.wAF.alphadeletions.vcf
+gunzip -c 1KGP_3202.gatksv_svtools_novelins.freeze_V3.wAF.vcf.gz | awk -F"\t" '$1=="chr16" && $2==173630 {print}' >> 1KGP_3202.gatksv_svtools_novelins.freeze_V3.wAF.alphadeletions.vcf
+
+rm 1KGP_3202.gatksv_svtools_novelins.freeze_V3.wAF.vcf.gz

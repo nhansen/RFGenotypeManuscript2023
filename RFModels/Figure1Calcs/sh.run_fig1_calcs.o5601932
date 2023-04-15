@@ -1,0 +1,5 @@
+Writing model to itersmall.90.rf.model, model accuracy stats to itersmall.90.rf.stats, and feature importance values to itersmall.90.rf.importance.txt in models directory
+Writing model to itersmall.80.rf.model, model accuracy stats to itersmall.80.rf.stats, and feature importance values to itersmall.80.rf.importance.txt in models directory
+Writing model to itersmall.70.rf.model, model accuracy stats to itersmall.70.rf.stats, and feature importance values to itersmall.70.rf.importance.txt in models directory
+Writing model to itersmall.60.rf.model, model accuracy stats to itersmall.60.rf.stats, and feature importance values to itersmall.60.rf.importance.txt in models directory
+Writing model to itersmall.50.rf.model, model accuracy stats to itersmall.50.rf.stats, and feature importance values to itersmall.50.rf.importance.txt in models directory

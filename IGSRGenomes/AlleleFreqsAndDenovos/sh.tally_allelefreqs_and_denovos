@@ -1,0 +1,5 @@
+#!/bin/bash
+
+./calc_superpop_freqs_and_denovo_rate.pl ../RFGenoGenotypes/IGSR3202.samples_with_genos.hq.txt > IGSR3202.RFGenoAlleleFreqs.hq.out
+./calc_superpop_freqs_and_denovo_rate.pl ../ByrskaBishopGenotypes/1KGP_3202.gatksv_svtools_novelins.freeze_V3.wAF.alphadeletion.samples_with_genos.txt > IGSR3202.ByrskaBishop.out
+

@@ -1,0 +1,8 @@
+#!/bin/bash
+
+source /etc/profile.d/modules.sh
+module use /opt/sw/modules
+
+module load Python/3.7.4-GCCcore-8.3.0
+
+python3 ../../../MachineLearning/mlgenotype/github/mlgenotype/scripts/RFModelTrain.py -s ../../SimTrainData/SimFeatures/combined_features.sixgenos.train.txt -t ../../SimTrainData/SimFeatures/combined_features.sixgenos.test.txt -o combined_full_model.sixgenos

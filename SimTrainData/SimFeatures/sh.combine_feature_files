@@ -1,0 +1,11 @@
+#!/bin/bash
+
+head -1 ../SimSVs/features/combined_feature_file.WTYP_WTYP.txt > combined_features.sixgenos.txt
+for file in `ls ../SimSVs/features/combined_feature_file.*.txt | grep -v 'noheader'`; do
+    echo $file;
+    grep -v 'Genotype' $file >> combined_features.sixgenos.txt;
+done
+
+# split simulated features into equal sized training and test sets:
+awk 'NR==1 || (NR-10*int(NR/10)>=0 && NR-10*int(NR/10)<=4) {print}' combined_features.sixgenos.txt > combined_features.sixgenos.train.txt
+awk 'NR==1 || (NR-10*int(NR/10)>=5 && NR-10*int(NR/10)<=9) {print}' combined_features.sixgenos.txt > combined_features.sixgenos.test.txt

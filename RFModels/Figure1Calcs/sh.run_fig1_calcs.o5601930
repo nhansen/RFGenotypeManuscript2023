@@ -1,0 +1,6 @@
+Writing model to iter1.100.rf.model, model accuracy stats to iter1.100.rf.stats, and feature importance values to iter1.100.rf.importance.txt in models directory
+Writing model to iter1.200.rf.model, model accuracy stats to iter1.200.rf.stats, and feature importance values to iter1.200.rf.importance.txt in models directory
+Writing model to iter1.300.rf.model, model accuracy stats to iter1.300.rf.stats, and feature importance values to iter1.300.rf.importance.txt in models directory
+Writing model to iter1.400.rf.model, model accuracy stats to iter1.400.rf.stats, and feature importance values to iter1.400.rf.importance.txt in models directory
+Writing model to iter1.500.rf.model, model accuracy stats to iter1.500.rf.stats, and feature importance values to iter1.500.rf.importance.txt in models directory
+Writing model to iter1.600.rf.model, model accuracy stats to iter1.600.rf.stats, and feature importance values to iter1.600.rf.importance.txt in models directory

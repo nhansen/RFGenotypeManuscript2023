@@ -1,0 +1,5 @@
+#!/bin/bash
+
+sed 's:.*/::' NewWGS215.fastqs.fof | sed 's/.fastq//' | awk '{OFS="\t"; print NR, $1}' > NewWGS215.samplenames.txt
+join NewWGS215.samplenames.txt NewWGS215.rf.genos.rf.genos | awk '{OFS="\t"; print $2, $3}' > NewWGS215.samples_with_genos.txt
+join NewWGS215.samplenames.txt NewWGS215.rf.genos.rf.genos | awk '$4>=0.4 {OFS="\t"; print $2, $3}' > NewWGS215.samples_with_genos.hq.txt
