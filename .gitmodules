@@ -1,0 +1,6 @@
+[submodule "SimSVs"]
+	path = SimSVs
+	url = https://github.com/nhansen/SimSVs
+[submodule "mlgenotype"]
+	path = mlgenotype
+	url = https://github.com/nhansen/mlgenotype
